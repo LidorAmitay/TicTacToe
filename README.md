@@ -13,10 +13,14 @@ Tic-Tac-Toe rules:
 4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 ### About the project
 This project built with Python, in OOP paradigm. 
-The project have 3 main objects: **State**, **AI** and **Game**  
-**State** object represent a state of the game (board, turn, and how many rounds played)  
+The project have 3 main objects: **State**, **AI** and **Game**   
+
+**State** object represent a state of the game (board, turn, and how many rounds played)   
+
 **AI** object represent the computer player, which uses the minimax algorithm to determine his next move.  
-After making a move the AI object updates the Game object state.  
+After making a move the AI object updates the Game object state. 
+Actually the AI in this game is invincible, becuase of the minimax algorithm.
+
 **Game** object responsibility is to manage the flow of the game. Game object save and update the current state and turn of the game.
 
 
