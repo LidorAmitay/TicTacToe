@@ -40,7 +40,7 @@ You can shut it down by pressing `ctrl+c` on Windows or `command+.` on Mac
 When you run the program, at first it will print short instructions.  
 Afterwards, the board will be printed, and the game will start.  
 Each turn, you will be asked to choose a number in range (0-8)  
-Each number represented cell from the game board:  
+Each number represent a cell from the game board:  
 
               0 |  1 | 2  
              ------------
