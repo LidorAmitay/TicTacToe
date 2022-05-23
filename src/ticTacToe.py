@@ -13,10 +13,9 @@ class State:
                     0, 0, 0,
                     0, 0, 0]
         
-        # current status of the game
-        # start - before initial game configuration
+        # current result of the game
         # active - game still active
-        # X/O/draw - represent the winner after game ended
+        # X/O/draw - represent the winner
         self.result = "active"
     
     def updateState(self, old, move):
@@ -79,12 +78,7 @@ class State:
 class AI:
 
     def __init__(self):
-        # current game being played by the AI.
-        self.game = {}
-
-        # variable used to store the next move, determined by the recursive minimax function
-        self.nextMove = ''
-
+        
         # initialize the AI's symbol.
         self.AISymbol = 'O'
 
@@ -110,7 +104,6 @@ class AI:
                 scores.append(curScore)
             
             if state.turn == 'X':
-                # print(f'scores = {scores}')
                 # if it's the player's turn, find the maximum value.
                 maxIndex = scores.index(max(scores))
                 
@@ -130,7 +123,9 @@ class AI:
                 # return the minimum score
                 return scores[minIndex]
     
+    
     def plays(self, _game):
+        # current game being played by the AI.
         self.game = _game
 
     def takeMove(self, _state:State):
@@ -157,12 +152,6 @@ class Game:
     
     def advancedTo(self, _state):
         self.currentState = _state
-    
-    def start(self):
-        if self.status == 'start':
-            self.advancedTo(self.currentState)
-            self.status = 'running'
-    
 
     def updateBoard(self):
         boardToPrint = [sign if sign != 0 else ' ' for sign in self.currentState.board]
